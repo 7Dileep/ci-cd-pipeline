@@ -7,7 +7,7 @@ agent any
          stage('Git chceckout'){
 
            steps{
-                             git branch: 'main', url: 'https://github.com/PoudelAmrit123/ci-cd-pipeline.git'
+                             git branch: 'main', url: 'https://github.com/7Dileep/ci-cd-pipeline.git'
                 }
                              }
         stage('Unit Test'){
