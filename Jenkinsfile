@@ -81,8 +81,8 @@ agent any
         script{
 
             sh 'docker image build -t  $JOB_NAME:v1.$BUILD_ID .'
-            sh 'docker image tag  $JOB_NAME:v1.$BUILD_ID  amritpoudel/$JOB_NAME:v1.$BUILD_ID'
-            sh 'docker image tag  $JOB_NAME:v1.$BUILD_ID   amritpoudel/$JOB_NAME:latest'
+            sh 'docker image tag  $JOB_NAME:v1.$BUILD_ID  dileep002/dileep:v1.$BUILD_ID'
+            sh 'docker image tag  $JOB_NAME:v1.$BUILD_ID  dileep002/dileep:latest'
         }
      }
 
@@ -94,9 +94,9 @@ agent any
 
     script{
             withCredentials([string(credentialsId: 'docker-cred', variable: 'docker_hub_cred')]) {
-                sh 'docker login -u amritpoudel -p ${docker_hub_cred}'
-                sh 'docker image push amritpoudel/$JOB_NAME:v1.$BUILD_ID '
-                sh 'docker image push amritpoudel/$JOB_NAME:latest '
+                sh 'docker login -u dileep002 -p ${docker_hub_cred}'
+                sh 'docker image push dileep002/dileep:v1.$BUILD_ID '
+                sh 'docker image push dileep002/dileep:latest '
     // some block
                      }
 
