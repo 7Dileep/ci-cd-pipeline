@@ -59,7 +59,7 @@ jobs:
       - name: Build Docker Image
         run: |
           docker build -t dileep002/dileep:v1.${{ github.run_number }} .
-          docker tag dileep002/dileep:v1.${{ github.run_number }} yogeshkasare/myrepo:latest
+          docker tag dileep002/dileep:v1.${{ github.run_number }} dileep002/dileep:latest
 
   
     
